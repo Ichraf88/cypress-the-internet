@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-   "clean-reports": "powershell -Command \"Remove-Item -Path ./cypress/reports/*.json -Force -ErrorAction SilentlyContinue\"",
-  "test": "npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true",
-  "merge": "npx mochawesome-merge cypress/reports/*.json -o cypress/reports/output.json",
-  "report": "npx marge cypress/reports/output.json --reportDir cypress/reports --reportFilename rapport-final",
-  "full-report": "npm run clean-reports && npm run test && npm run merge && npm run report"
- },
+    "clean-reports": "powershell -Command \"Remove-Item -Path ./cypress/reports/*.json -Force -ErrorAction SilentlyContinue\"",
+    "test": "npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true",
+    "merge": "npx mochawesome-merge cypress/reports/*.json -o cypress/reports/output.json",
+    "report": "npx marge cypress/reports/output.json --reportDir cypress/reports --reportFilename rapport-final --inline",
+    "full-report": "npm run clean-reports && npm run test && npm run merge && npm run report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
